@@ -399,7 +399,7 @@ const JSZip = require('jszip');
             const cte = this.ctXDoc.getRoot().elements(CT.Override).firstOrDefault(function (e) {
               return e.attribute("PartName").value === part;
             });
-            if (cte === null) {
+            if (!cte) {
               const extension = part
                 .substring(part.lastIndexOf('.') + 1).toLowerCase();
               const dct = this.ctXDoc.getRoot().elements(CT.Default).firstOrDefault(function (e) {
