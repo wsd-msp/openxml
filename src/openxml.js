@@ -5571,8 +5571,7 @@ const JSZip = require('jszip');
   // module export
   if (typeof define === typeof function () {
     } && define.amd) { // AMD
-    console.log('A');
-    define("openxml", ["linq", "ltxml", "ltxml-extensions"],
+    define("openxml", ["linq", "./ltxml", "./ltxml-extensions"],
       function (Enumerable, Ltxml, XEnumerable) {
         return defineOpenXml(Enumerable, Ltxml, XEnumerable);
       });
