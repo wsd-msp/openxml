@@ -506,7 +506,7 @@ const JSZip = require('jszip');
               return ctpn === thpn;
             });
             let ct = null;
-            if (cte === null) {
+            if (!cte) {
               const extension = thisPart.uri
                 .substring(thisPart.uri.lastIndexOf('.') + 1).toLowerCase();
               const dct = docpkg.ctXDoc.getRoot().elements(CT.Default).firstOrDefault(function (e) {
