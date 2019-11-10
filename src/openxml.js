@@ -313,7 +313,7 @@ const JSZip = require('jszip');
             const cte = that.ctXDoc.getRoot().elements(CT.Override).firstOrDefault(function (e) {
               return e.attribute("PartName").value === part;
             });
-            if (cte === null) {
+            if (!cte) {
               const extension = part
                 .substring(part.lastIndexOf('.') + 1)
                 .toLowerCase();
@@ -802,7 +802,7 @@ const JSZip = require('jszip');
         .firstOrDefault(function (o) {
           return o.attribute("PartName").value === uri;
         });
-      if (ct === null) {
+      if (!ct) {
         const exti = uri.lastIndexOf(".");
         const ext = uri.substring(exti + 1);
         const dct = this.ctXDoc.descendants(CT.Default)
